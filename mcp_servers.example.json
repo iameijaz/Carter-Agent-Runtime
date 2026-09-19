@@ -1,0 +1,13 @@
+[
+  {
+    "name": "filesystem",
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\path\\to\\a\\folder\\you\\allow"],
+    "env": {}
+  },
+  {
+    "name": "google-calendar",
+    "command": "npx",
+    "args": ["-y", "@cocal/google-calendar-mcp"]
+  }
+]

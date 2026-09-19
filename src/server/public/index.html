@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CARTER // HUD</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="topbar">
+    <span class="brand">⚡ CARTER //</span>
+    <span id="model-name">STANDBY</span>
+    <span id="model-via" title="Where this turn's tokens came from"></span>
+    <span class="spacer"></span>
+    <span id="live-dot">● OFFLINE</span>
+    <span id="clock">--:--:--</span>
+  </header>
+
+  <div id="scan-bar"></div>
+
+  <main id="transcript" aria-live="polite"></main>
+
+  <!-- Tool calls live here, not in the transcript: they are machine detail the
+       operator watches, not conversation. -->
+  <aside id="toolrail" aria-label="Tool calls">
+    <h2>TOOL CALLS <span id="tool-count"></span></h2>
+    <div id="tool-list"></div>
+    <p id="tool-empty">idle — no tool has run this session</p>
+  </aside>
+
+  <footer id="composer">
+    <textarea id="input" rows="1" placeholder="Transmit a directive to Carter…"></textarea>
+    <button id="send" title="Send">▶</button>
+    <button id="stop" title="Cancel run" hidden>■</button>
+  </footer>
+
+  <!-- Human-in-the-loop: the agent blocks here until the operator decides. -->
+  <div id="hil">
+    <div class="hil-box">
+      <h2>OPERATOR APPROVAL REQUIRED</h2>
+      <p id="hil-reason"></p>
+      <textarea id="hil-code" spellcheck="false"></textarea>
+      <div class="hil-actions">
+        <button id="hil-abort">DENY</button>
+        <button id="hil-approve">APPROVE</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

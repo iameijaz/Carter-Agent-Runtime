@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 660" width="940" height="660"
+     font-family="ui-sans-serif, 'Segoe UI', system-ui, sans-serif" role="img"
+     aria-labelledby="t d">
+  <title id="t">Carter — one turn</title>
+  <desc id="d">A user message is turned into a system prompt assembled from base policy,
+  preferences, tracked facts and lessons from past failures. The agent loop runs tool
+  calls in parallel; a failed call is written to the mistakes table and replayed into
+  every later turn's prompt. Every turn is logged to the turns table.</desc>
+
+  <style>
+    .bg   { fill: #01060d }
+    .card { fill: rgba(0,40,70,.25); stroke: #0d3a5c; stroke-width: 1; rx: 6 }
+    .lead { stroke: #00c8ff; stroke-width: 2 }
+    .h    { fill: #00c8ff; font-size: 11px; letter-spacing: .18em; text-transform: uppercase }
+    .code { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; fill: #ffffff; font-size: 14px }
+    .txt  { fill: #bfe6ff; font-size: 12.5px }
+    .dim  { fill: #5c829e; font-size: 11.5px }
+    .chip { fill: rgba(0,200,255,.10); stroke: rgba(0,200,255,.30); rx: 4 }
+    .chipOn { fill: rgba(0,200,255,.22); stroke: #00c8ff; rx: 4 }
+    .chipT  { fill: #00c8ff; font-size: 11px; font-weight: 600 }
+    .fail { fill: #ff6b60; font-size: 12.5px }
+    .ok   { fill: #4bd67a; font-size: 12.5px }
+    .flow { stroke: #00c8ff; stroke-width: 1.6; fill: none; marker-end: url(#a) }
+    .loop { stroke: #ff6b60; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; marker-end: url(#r) }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00c8ff"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff6b60"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="940" height="660"/>
+  <text class="h" x="40" y="42">Carter · one turn</text>
+  <text class="dim" x="40" y="60">the system prompt is rebuilt every turn — it is not a constant</text>
+
+  <!-- user message -->
+  <rect class="card" x="310" y="76" width="240" height="42"/>
+  <text class="txt" x="430" y="102" text-anchor="middle">user message</text>
+  <path class="flow" d="M430,118 V148"/>
+
+  <!-- prompt assembly -->
+  <rect class="card lead" x="200" y="152" width="460" height="120"/>
+  <text class="code" x="216" y="178">assembleSystemPrompt()</text>
+  <g class="chip">
+    <rect x="216" y="192" width="98" height="30"/>
+    <rect x="326" y="192" width="98" height="30"/>
+    <rect x="436" y="192" width="98" height="30"/>
+  </g>
+  <rect class="chipOn" x="546" y="192" width="98" height="30"/>
+  <text class="chipT" x="265" y="211" text-anchor="middle">base policy</text>
+  <text class="chipT" x="375" y="211" text-anchor="middle">preferences</text>
+  <text class="chipT" x="485" y="211" text-anchor="middle">facts</text>
+  <text class="chipT" x="595" y="211" text-anchor="middle">lessons</text>
+  <text class="dim" x="216" y="245">the last three grow with use — this is the mechanism the project is built around</text>
+  <text class="dim" x="216" y="262">plus the current date, so relative times resolve against now, not the training cutoff</text>
+  <path class="flow" d="M430,272 V306"/>
+
+  <!-- agent loop -->
+  <rect class="card lead" x="200" y="310" width="460" height="196"/>
+  <text class="code" x="216" y="336">AgentLoop.send()</text>
+  <text class="txt" x="216" y="364">ToolBox.getOpenAiTools()</text>
+  <text class="dim" x="216" y="381">native + MCP, cached on registry version</text>
+  <text class="txt" x="216" y="410">parallel tool execution within a round</text>
+  <text class="fail" x="216" y="440">✕  a call fails — error <tspan class="dim">and</tspan> the arguments that failed</text>
+  <text class="ok"   x="216" y="466">✓  a later success attaches the fix — any run, not just this one</text>
+  <text class="dim" x="216" y="492">≤ 8 tool rounds per turn</text>
+  <path class="flow" d="M430,506 V542"/>
+
+  <!-- turns log -->
+  <rect class="card" x="200" y="546" width="460" height="58"/>
+  <text class="txt" x="216" y="570">turns table — one row per turn</text>
+  <text class="dim" x="216" y="590">path · latency · brain · tools · rounds · outcome · schema version</text>
+
+  <!-- mistakes table + the replay loop -->
+  <path class="loop" d="M660,440 H698"/>
+  <rect class="card" x="700" y="400" width="200" height="82" stroke="#ff6b60"/>
+  <text class="code" x="716" y="426" font-size="13">mistakes</text>
+  <text class="dim" x="716" y="445">tool · error · args</text>
+  <text class="dim" x="716" y="462">err_key · hits · fix</text>
+  <path class="loop" d="M800,400 V207 H664"/>
+  <text class="dim" x="812" y="330" transform="rotate(-90 812 330)" text-anchor="middle">
+    replayed into every later turn
+  </text>
+
+  <text class="dim" x="40" y="634">
+    Whether that replay stops the model repeating the call is measured, not asserted — see MISTAKES-BENCH.md.
+  </text>
+</svg>

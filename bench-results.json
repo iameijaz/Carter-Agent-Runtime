@@ -1,0 +1,490 @@
+{
+  "model": "openai/gpt-4.1",
+  "runs": 3,
+  "at": "2026-09-19T09:15:41.637Z",
+  "rate": 100,
+  "p50": 894,
+  "p95": 1427,
+  "results": [
+    {
+      "id": "weather-1",
+      "prompt": "What's the weather in Oslo right now?",
+      "want": "get_weather",
+      "got": "get_weather",
+      "ok": true,
+      "ms": 1014,
+      "reason": "",
+      "args": "{\"location\":\"Oslo\"}"
+    },
+    {
+      "id": "weather-2",
+      "prompt": "Do I need an umbrella in Lisbon tomorrow?",
+      "want": "get_weather",
+      "got": "get_weather",
+      "ok": true,
+      "ms": 945,
+      "reason": "",
+      "args": "{\"location\":\"Lisbon\"}"
+    },
+    {
+      "id": "search-1",
+      "prompt": "Search the web for the latest ROS 2 Jazzy release notes.",
+      "want": "web_search",
+      "got": "web_search",
+      "ok": true,
+      "ms": 1015,
+      "reason": "",
+      "args": "{\"query\":\"ROS 2 Jazzy release notes\"}"
+    },
+    {
+      "id": "search-2",
+      "prompt": "What are people saying about the new Raspberry Pi 5 compute module?",
+      "want": "web_search",
+      "got": "web_search",
+      "ok": true,
+      "ms": 2287,
+      "reason": "",
+      "args": "{\"query\":\"Raspberry Pi 5 compute module reviews opinions\"}"
+    },
+    {
+      "id": "fetch-1",
+      "prompt": "Read https://example.com and summarise it.",
+      "want": "web_fetch",
+      "got": "web_fetch",
+      "ok": true,
+      "ms": 810,
+      "reason": "",
+      "args": "{\"url\":\"https://example.com\"}"
+    },
+    {
+      "id": "mail-1",
+      "prompt": "Check my inbox for anything new.",
+      "want": "email_fetch",
+      "got": "email_fetch",
+      "ok": true,
+      "ms": 840,
+      "reason": "",
+      "args": "{\"folder\":\"INBOX\",\"limit\":10,\"unread_only\":true}"
+    },
+    {
+      "id": "mail-2",
+      "prompt": "Find the email from the landlord about the deposit.",
+      "want": "email_search",
+      "got": "email_search",
+      "ok": true,
+      "ms": 974,
+      "reason": "",
+      "args": "{\"query\":\"deposit landlord\",\"limit\":10}"
+    },
+    {
+      "id": "mail-3",
+      "prompt": "What mail folders do I have?",
+      "want": "email_folders",
+      "got": "email_folders",
+      "ok": true,
+      "ms": 774,
+      "reason": "",
+      "args": "{}"
+    },
+    {
+      "id": "lib-1",
+      "prompt": "Is 'Probabilistic Robotics' available in the library?",
+      "want": "library_check_availability",
+      "got": "library_check_availability",
+      "ok": true,
+      "ms": 791,
+      "reason": "",
+      "args": "{\"title\":\"Probabilistic Robotics\"}"
+    },
+    {
+      "id": "lib-2",
+      "prompt": "Search the library catalogue for books on Kalman filtering.",
+      "want": "library_search",
+      "got": "library_search",
+      "ok": true,
+      "ms": 842,
+      "reason": "",
+      "args": "{\"query\":\"Kalman filtering\",\"limit\":10,\"only_available\":false}"
+    },
+    {
+      "id": "train-1",
+      "prompt": "How do I get from Berlin to Hamburg by train tomorrow morning?",
+      "want": "train_journeys",
+      "got": "train_journeys",
+      "ok": true,
+      "ms": 998,
+      "reason": "",
+      "args": "{\"from\":\"Berlin\",\"to\":\"Hamburg\",\"when\":\"2024-06-13T08:00:00\",\"results\":4}"
+    },
+    {
+      "id": "pref-1",
+      "prompt": "Remember that I prefer metric units.",
+      "want": "remember_preference",
+      "got": "remember_preference",
+      "ok": true,
+      "ms": 1123,
+      "reason": "",
+      "args": "{\"topic\":\"units\",\"source\":\"\",\"approach\":\"Always use metric units as the default for all measurements and conversions unless explicitly specified otherwise.\",\"notes\":\"User prefers metric units for all outputs, calculations, and measurement contexts.\"}"
+    },
+    {
+      "id": "pref-2",
+      "prompt": "Forget what I told you about my dietary preferences.",
+      "want": "forget_preference",
+      "got": "forget_preference",
+      "ok": true,
+      "ms": 766,
+      "reason": "",
+      "args": "{\"topic\":\"dietary preferences\"}"
+    },
+    {
+      "id": "mcp-1",
+      "prompt": "Find me an MCP server that can talk to Postgres.",
+      "want": "search_extensions",
+      "got": "search_extensions",
+      "ok": true,
+      "ms": 894,
+      "reason": "",
+      "args": "{\"capability\":\"postgres\"}"
+    },
+    {
+      "id": "skill-1",
+      "prompt": "Create a skill that summarises a PDF into bullet points.",
+      "want": "create_skill",
+      "got": "create_skill",
+      "ok": true,
+      "ms": 1427,
+      "reason": "",
+      "args": "{\"name\":\"pdf-bullet-point-summary\",\"description\":\"Summarises a PDF into bullet points.\",\"triggers\":[\"summarise this PDF\",\"bullet point summary of this PDF\",\"summarize PDF into key points\"],\"body\":\"1. Accept a PDF file from the user or a URL to a PDF.\\n2. Extract the text content from the PDF.\\n3. Identify and summarise the main points from the text.\\n4. Present the summary as a list of clear, concise bullet points.\\n5. Return the bullet points to the user.\"}"
+    },
+    {
+      "id": "lesson-1",
+      "prompt": "Record a lesson: always check the file exists before writing.",
+      "want": "record_lesson",
+      "got": "record_lesson",
+      "ok": true,
+      "ms": 1091,
+      "reason": "",
+      "args": "{\"tool\":\"general\",\"situation\":\"When handling file write operations\",\"mistake\":\"Not checking if a file exists before writing to it.\",\"fix\":\"Always check if the file exists before attempting to write, to avoid overwriting important data or causing errors.\",\"supersede_history\":false}"
+    },
+    {
+      "id": "weather-1",
+      "prompt": "What's the weather in Oslo right now?",
+      "want": "get_weather",
+      "got": "get_weather",
+      "ok": true,
+      "ms": 893,
+      "reason": "",
+      "args": "{\"location\":\"Oslo\"}"
+    },
+    {
+      "id": "weather-2",
+      "prompt": "Do I need an umbrella in Lisbon tomorrow?",
+      "want": "get_weather",
+      "got": "get_weather",
+      "ok": true,
+      "ms": 829,
+      "reason": "",
+      "args": "{\"location\":\"Lisbon\"}"
+    },
+    {
+      "id": "search-1",
+      "prompt": "Search the web for the latest ROS 2 Jazzy release notes.",
+      "want": "web_search",
+      "got": "web_search",
+      "ok": true,
+      "ms": 811,
+      "reason": "",
+      "args": "{\"query\":\"ROS 2 Jazzy release notes\"}"
+    },
+    {
+      "id": "search-2",
+      "prompt": "What are people saying about the new Raspberry Pi 5 compute module?",
+      "want": "web_search",
+      "got": "web_search",
+      "ok": true,
+      "ms": 1363,
+      "reason": "",
+      "args": "{\"query\":\"Raspberry Pi 5 compute module reviews and reactions\"}"
+    },
+    {
+      "id": "fetch-1",
+      "prompt": "Read https://example.com and summarise it.",
+      "want": "web_fetch",
+      "got": "web_fetch",
+      "ok": true,
+      "ms": 1034,
+      "reason": "",
+      "args": "{\"url\":\"https://example.com\"}"
+    },
+    {
+      "id": "mail-1",
+      "prompt": "Check my inbox for anything new.",
+      "want": "email_fetch",
+      "got": "email_fetch",
+      "ok": true,
+      "ms": 849,
+      "reason": "",
+      "args": "{\"folder\":\"INBOX\",\"limit\":10,\"unread_only\":true}"
+    },
+    {
+      "id": "mail-2",
+      "prompt": "Find the email from the landlord about the deposit.",
+      "want": "email_search",
+      "got": "email_search",
+      "ok": true,
+      "ms": 823,
+      "reason": "",
+      "args": "{\"query\":\"deposit landlord\",\"limit\":10}"
+    },
+    {
+      "id": "mail-3",
+      "prompt": "What mail folders do I have?",
+      "want": "email_folders",
+      "got": "email_folders",
+      "ok": true,
+      "ms": 750,
+      "reason": "",
+      "args": "{}"
+    },
+    {
+      "id": "lib-1",
+      "prompt": "Is 'Probabilistic Robotics' available in the library?",
+      "want": "library_check_availability",
+      "got": "library_check_availability",
+      "ok": true,
+      "ms": 871,
+      "reason": "",
+      "args": "{\"title\":\"Probabilistic Robotics\"}"
+    },
+    {
+      "id": "lib-2",
+      "prompt": "Search the library catalogue for books on Kalman filtering.",
+      "want": "library_search",
+      "got": "library_search",
+      "ok": true,
+      "ms": 875,
+      "reason": "",
+      "args": "{\"query\":\"Kalman filtering\",\"limit\":10,\"only_available\":false}"
+    },
+    {
+      "id": "train-1",
+      "prompt": "How do I get from Berlin to Hamburg by train tomorrow morning?",
+      "want": "train_journeys",
+      "got": "train_journeys",
+      "ok": true,
+      "ms": 856,
+      "reason": "",
+      "args": "{\"from\":\"Berlin\",\"to\":\"Hamburg\",\"when\":\"2024-06-22T08:00:00\",\"results\":4}"
+    },
+    {
+      "id": "pref-1",
+      "prompt": "Remember that I prefer metric units.",
+      "want": "remember_preference",
+      "got": "remember_preference",
+      "ok": true,
+      "ms": 1137,
+      "reason": "",
+      "args": "{\"topic\":\"units\",\"source\":\"metric\",\"approach\":\"Always provide information and answers using metric (SI) units unless specifically asked for another system.\",\"notes\":\"User prefers metric units for all measurements.\"}"
+    },
+    {
+      "id": "pref-2",
+      "prompt": "Forget what I told you about my dietary preferences.",
+      "want": "forget_preference",
+      "got": "forget_preference",
+      "ok": true,
+      "ms": 744,
+      "reason": "",
+      "args": "{\"topic\":\"dietary preferences\"}"
+    },
+    {
+      "id": "mcp-1",
+      "prompt": "Find me an MCP server that can talk to Postgres.",
+      "want": "search_extensions",
+      "got": "search_extensions",
+      "ok": true,
+      "ms": 1056,
+      "reason": "",
+      "args": "{\"capability\":\"Postgres\"}"
+    },
+    {
+      "id": "skill-1",
+      "prompt": "Create a skill that summarises a PDF into bullet points.",
+      "want": "create_skill",
+      "got": "create_skill",
+      "ok": true,
+      "ms": 2917,
+      "reason": "",
+      "args": "{\"name\":\"pdf-to-bullet-summariser\",\"description\":\"Summarises a PDF file into clear bullet points.\",\"triggers\":[\"summarise this PDF\",\"pdf summary bullet points\",\"bullet point summary of PDF\"],\"body\":\"When triggered, perform the following steps:\\n\\n1. Receive or identify the PDF file URL or path from the user input or context.\\n2. Extract the main textual content from the PDF using an available PDF extraction tool or API.\\n3. Read through the content and identify key points, topics, and arguments. Focus on headings, topic sentences, conclusions, and repeated themes.\\n4. Condense the essential information into concise bullet points, covering:\\n   - Main topic and purpose\\n   - Key findings or arguments\\n   - Important data or results\\n   - Conclusions or recommendations\\n5. Return the bullet point summary to the user.\\n6. If the PDF is very long, optionally inform the user if the summary is limited to main sections or if a more detailed summary is available upon request.\"}"
+    },
+    {
+      "id": "lesson-1",
+      "prompt": "Record a lesson: always check the file exists before writing.",
+      "want": "record_lesson",
+      "got": "record_lesson",
+      "ok": true,
+      "ms": 1001,
+      "reason": "",
+      "args": "{\"tool\":\"general\",\"situation\":\"Handling files in code\",\"mistake\":\"Not checking if a file exists before attempting to write to it.\",\"fix\":\"Always check if the target file exists before writing.\",\"supersede_history\":false}"
+    },
+    {
+      "id": "weather-1",
+      "prompt": "What's the weather in Oslo right now?",
+      "want": "get_weather",
+      "got": "get_weather",
+      "ok": true,
+      "ms": 873,
+      "reason": "",
+      "args": "{\"location\":\"Oslo\"}"
+    },
+    {
+      "id": "weather-2",
+      "prompt": "Do I need an umbrella in Lisbon tomorrow?",
+      "want": "get_weather",
+      "got": "get_weather",
+      "ok": true,
+      "ms": 992,
+      "reason": "",
+      "args": "{\"location\":\"Lisbon\"}"
+    },
+    {
+      "id": "search-1",
+      "prompt": "Search the web for the latest ROS 2 Jazzy release notes.",
+      "want": "web_search",
+      "got": "web_search",
+      "ok": true,
+      "ms": 765,
+      "reason": "",
+      "args": "{\"query\":\"ROS 2 Jazzy release notes\"}"
+    },
+    {
+      "id": "search-2",
+      "prompt": "What are people saying about the new Raspberry Pi 5 compute module?",
+      "want": "web_search",
+      "got": "web_search",
+      "ok": true,
+      "ms": 911,
+      "reason": "",
+      "args": "{\"query\":\"Raspberry Pi 5 Compute Module reviews and opinions\"}"
+    },
+    {
+      "id": "fetch-1",
+      "prompt": "Read https://example.com and summarise it.",
+      "want": "web_fetch",
+      "got": "web_fetch",
+      "ok": true,
+      "ms": 863,
+      "reason": "",
+      "args": "{\"url\":\"https://example.com\"}"
+    },
+    {
+      "id": "mail-1",
+      "prompt": "Check my inbox for anything new.",
+      "want": "email_fetch",
+      "got": "email_fetch",
+      "ok": true,
+      "ms": 887,
+      "reason": "",
+      "args": "{\"folder\":\"INBOX\",\"limit\":10,\"unread_only\":true}"
+    },
+    {
+      "id": "mail-2",
+      "prompt": "Find the email from the landlord about the deposit.",
+      "want": "email_search",
+      "got": "email_search",
+      "ok": true,
+      "ms": 820,
+      "reason": "",
+      "args": "{\"query\":\"landlord deposit\",\"limit\":10}"
+    },
+    {
+      "id": "mail-3",
+      "prompt": "What mail folders do I have?",
+      "want": "email_folders",
+      "got": "email_folders",
+      "ok": true,
+      "ms": 765,
+      "reason": "",
+      "args": "{}"
+    },
+    {
+      "id": "lib-1",
+      "prompt": "Is 'Probabilistic Robotics' available in the library?",
+      "want": "library_check_availability",
+      "got": "library_check_availability",
+      "ok": true,
+      "ms": 720,
+      "reason": "",
+      "args": "{\"title\":\"Probabilistic Robotics\"}"
+    },
+    {
+      "id": "lib-2",
+      "prompt": "Search the library catalogue for books on Kalman filtering.",
+      "want": "library_search",
+      "got": "library_search",
+      "ok": true,
+      "ms": 1265,
+      "reason": "",
+      "args": "{\"query\":\"Kalman filtering\",\"limit\":10,\"only_available\":false}"
+    },
+    {
+      "id": "train-1",
+      "prompt": "How do I get from Berlin to Hamburg by train tomorrow morning?",
+      "want": "train_journeys",
+      "got": "train_journeys",
+      "ok": true,
+      "ms": 1099,
+      "reason": "",
+      "args": "{\"from\":\"Berlin\",\"to\":\"Hamburg\",\"when\":\"2024-06-27T08:00:00\",\"results\":4}"
+    },
+    {
+      "id": "pref-1",
+      "prompt": "Remember that I prefer metric units.",
+      "want": "remember_preference",
+      "got": "remember_preference",
+      "ok": true,
+      "ms": 1065,
+      "reason": "",
+      "args": "{\"topic\":\"units\",\"source\":\"\",\"approach\":\"Always use metric units (meters, kilograms, Celsius, etc.) for all measurements and conversions unless otherwise specified.\",\"notes\":\"User prefers metric units for all answers.\"}"
+    },
+    {
+      "id": "pref-2",
+      "prompt": "Forget what I told you about my dietary preferences.",
+      "want": "forget_preference",
+      "got": "forget_preference",
+      "ok": true,
+      "ms": 791,
+      "reason": "",
+      "args": "{\"topic\":\"dietary preferences\"}"
+    },
+    {
+      "id": "mcp-1",
+      "prompt": "Find me an MCP server that can talk to Postgres.",
+      "want": "search_extensions",
+      "got": "search_extensions",
+      "ok": true,
+      "ms": 931,
+      "reason": "",
+      "args": "{\"capability\":\"Postgres\"}"
+    },
+    {
+      "id": "skill-1",
+      "prompt": "Create a skill that summarises a PDF into bullet points.",
+      "want": "create_skill",
+      "got": "create_skill",
+      "ok": true,
+      "ms": 1406,
+      "reason": "",
+      "args": "{\"name\":\"pdf-bullet-summary\",\"description\":\"Summarises a PDF into concise bullet points.\",\"triggers\":[\"summarise this PDF\",\"summarize this PDF as bullets\",\"PDF bullet summary\"],\"body\":\"1. Accept a PDF file or URL as input.\\n2. Extract the full text content from the PDF.\\n3. Read and understand the content to identify key information, main arguments, and supporting facts.\\n4. Distil the essence of the PDF into 5-10 concise bullet points, covering main ideas, conclusions, and any notable data.\\n5. Return the bullet points as a clean, readable summary.\"}"
+    },
+    {
+      "id": "lesson-1",
+      "prompt": "Record a lesson: always check the file exists before writing.",
+      "want": "record_lesson",
+      "got": "record_lesson",
+      "ok": true,
+      "ms": 995,
+      "reason": "",
+      "args": "{\"tool\":\"general\",\"situation\":\"When trying to write to a file.\",\"mistake\":\"Not checking if the file exists before writing.\",\"fix\":\"Always check that the file exists before writing to it.\",\"supersede_history\":false}"
+    }
+  ]
+}

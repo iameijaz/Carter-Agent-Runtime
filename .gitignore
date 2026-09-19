@@ -1,0 +1,52 @@
+# ── Secrets & credentials — never committed, not even locally ──────────────
+.env
+.env.*
+!.env.example
+*.keys.json
+client_secret*.json
+gcp-oauth*.json
+vault/
+workspace/vault/
+
+# ── Runtime state: memory, learned context, live server registry ───────────
+# Regenerated on boot. Kept out so the repo never carries a session's memory.
+*.db
+*.db-journal
+*.sqlite
+context.json
+modes.json
+mcp_servers.json
+models.json
+workspace/
+
+# ── Build & deps ───────────────────────────────────────────────────────────
+node_modules/
+dist/
+*.log
+
+# ── Python venvs — reproduced via scripts/setup-*.cmd ───────────────────────
+markitdown-venv/
+vision-venv/
+__pycache__/
+
+# ── Local runtime artifacts ────────────────────────────────────────────────
+# Brag video: source + render are committed; bundled music/SFX are not (licensing).
+brag-output*/composition/assets/
+brag-output*/composition/snapshots/
+workspace/browser-screenshots/
+workspace/vision-screenshots/
+workspace/components/
+hud-check.png
+
+# Brag videos: rendered artefacts, kept locally. Stale figures must not ship.
+brag-output*/
+
+# Private working notes — local-only, never published.
+# These carry portfolio strategy, absolute local paths and other project names.
+CLAUDE.md
+START-HERE.md
+STATUS.md
+CARTER_PLAN.md
+docs/FOR_*.md
+docs/WhatsNext.md
+docs/ROADMAP.md

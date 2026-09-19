@@ -1,0 +1,10 @@
+{
+  "preferences": [
+    {
+      "topic": "browser popup removal",
+      "approach": "If clicking with CSS selectors fails, immediately attempt JavaScript to trigger the click event for consent or cookie popups.",
+      "notes": "For common popups (like Google cookie consent), use JS to click label text if the default method fails.",
+      "updated": "2026-07-11T07:40:02.934Z"
+    }
+  ]
+}
